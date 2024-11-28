@@ -29,6 +29,6 @@ bin/
 .DS_Store
 
 .idea/
-.ImageSonPM.iml
-.ImageSon.iml
+./ImageSonPM.iml
+./ImageSon.iml
 ./generated_images/
