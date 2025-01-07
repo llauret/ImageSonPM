@@ -3,13 +3,13 @@ import java.awt.image.BufferedImage;
 
 public class SoundGenerator {
 
-    public static void playSineWaveFromImage(BufferedImage image, double minFreq, double maxnFreq) {
+    public static void playSineWaveFromImage(BufferedImage image, double minFreq, double maxFreq) {
         try {
             // Réduire la résolution de l'image et convertir en niveaux de gris
             BufferedImage grayscaleImage = resizeAndGrayscale(image, 64, 64);
 
             // Générer un son à partir de l'image
-            generateSoundFromImage(grayscaleImage, minFreq, maxnFreq);
+            generateSoundFromImage(grayscaleImage, minFreq, maxFreq);
         } catch (Exception e) {
             e.printStackTrace();
         }
