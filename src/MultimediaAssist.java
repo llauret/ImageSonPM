@@ -102,7 +102,7 @@ public class MultimediaAssist extends Application {
                     imageView.setImage(SwingFXUtils.toFXImage(bufferedImage, null));
                 });
 
-                SoundGenerator.playSineWaveFromImage(bufferedImage, minFreq, maxFreq);
+                SoundGenerator.playSineWaveFromImage(bufferedImage);
 
                 try {
                     Thread.sleep(1000); // 1 frame per second
@@ -126,7 +126,7 @@ public class MultimediaAssist extends Application {
         executor.submit(() -> {
             while (isPlaying) {
                 try {
-                    SoundGenerator.playSineWaveFromImage(image, minFreq, maxFreq);
+                    SoundGenerator.playSineWaveFromImage(image);
                     Thread.sleep(1000); // Loop every second
                 } catch (InterruptedException e) {
                     e.printStackTrace();
