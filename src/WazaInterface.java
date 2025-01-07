@@ -82,7 +82,7 @@ public class WazaInterface extends Application {
                 BufferedImage bufferedImage = ImageIO.read(selectedFile);
 
                 // Jouer le son basé sur l'image
-                SoundGenerator.playSineWaveFromImage(bufferedImage);
+                // SoundGenerator.playSineWaveFromImage(bufferedImage);
             } catch (IOException ex) {
                 ex.printStackTrace();
                 System.err.println("Erreur lors du chargement de l'image : " + ex.getMessage());

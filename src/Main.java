@@ -13,7 +13,7 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         System.out.println("Test waza");
-        imageCharcutor3000("C:/Users/scinp/Images/ilovethemballs.png");
+        imageCharcutor3000("C:\\Users\\Manuel\\Documents\\S5\\multimedia\\projet\\ImageSonPM\\src\\test.png");
     }
 
     public static void imageCharcutor3000(String imagePath) {

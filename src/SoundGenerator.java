@@ -3,13 +3,13 @@ import java.awt.image.BufferedImage;
 
 public class SoundGenerator {
 
-    public static void playSineWaveFromImage(BufferedImage image) {
+    public static void playSineWaveFromImage(BufferedImage image, double minFreq, double maxnFreq) {
         try {
             // Réduire la résolution de l'image et convertir en niveaux de gris
             BufferedImage grayscaleImage = resizeAndGrayscale(image, 64, 64);
 
             // Générer un son à partir de l'image
-            generateSoundFromImage(grayscaleImage);
+            generateSoundFromImage(grayscaleImage, minFreq, maxnFreq);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -21,14 +21,12 @@ public class SoundGenerator {
         return resizedImage;
     }
 
-    private static void generateSoundFromImage(BufferedImage image) throws LineUnavailableException {
+    private static void generateSoundFromImage(BufferedImage image, double minFreq, double maxFreq) throws LineUnavailableException {
         int width = image.getWidth();
         int height = image.getHeight();
 
         // Fréquences associées aux pixels (logarithmique entre 200 Hz et 4000 Hz)
         double[] frequencies = new double[height];
-        double minFreq = 200;
-        double maxFreq = 4000;
         for (int i = 0; i < height; i++) {
             frequencies[i] = minFreq * Math.pow(maxFreq / minFreq, (double) i / (height - 1));
         }
