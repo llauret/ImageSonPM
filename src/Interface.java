@@ -39,8 +39,8 @@ public class Interface {
         toolBar.getStyleClass().add("toolbar");
 
         Button openFileButton = createStyledButton("\uD83D\uDCC1 Open File");
-        Button playPauseButton = createStyledButton("\u25B6 Play");
-        Button stopButton = createStyledButton("\u23F9 Stop");
+        Button playPauseButton = createStyledButton("▶ Play");
+        Button stopButton = createStyledButton("⏹ Stop");
 
         Label minFreqLabel = new Label("Min Freq: " + (int) minFreq);
         minFreqLabel.getStyleClass().add("label");

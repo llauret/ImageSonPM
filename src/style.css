@@ -24,6 +24,11 @@
     -fx-cursor: hand;
 }
 
+.control-box {
+    -fx-background-color: #ecf0f1;
+    -fx-padding: 15px;
+    -fx-border-radius: 12px;
+}
 
 .label {
     -fx-text-fill: #ecf0f1;
