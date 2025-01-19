@@ -3,8 +3,9 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import org.opencv.core.Mat;
 import org.opencv.imgcodecs.Imgcodecs;
-import org.opencv.videoio.VideoCapture;
 import org.opencv.imgproc.Imgproc;
+import org.opencv.videoio.VideoCapture;
+
 import java.awt.image.BufferedImage;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -71,7 +72,7 @@ public class MediaProcessor {
 
     void togglePlayPause(Button playPauseButton) {
         isPlaying = !isPlaying;
-        playPauseButton.setText(isPlaying ? "Pause" : "Play");
+        playPauseButton.setText(isPlaying ? "\u23F8 Pause" : "\u25B6 Play");
     }
 
     public void stopPlayback() {

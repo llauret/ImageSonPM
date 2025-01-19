@@ -5,6 +5,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import org.opencv.core.Core;
 
+import java.util.Objects;
+
 public class MultimediaAssist extends Application {
 
     Interface uiInterface = new Interface();
@@ -23,6 +25,7 @@ public class MultimediaAssist extends Application {
         root.setTop(toolBar);
 
         Scene scene = new Scene(root, 1000, 700);
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
         primaryStage.setScene(scene);
         primaryStage.show();
     }
