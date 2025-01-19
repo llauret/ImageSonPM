@@ -72,7 +72,14 @@ public class MediaProcessor {
 
     void togglePlayPause(Button playPauseButton) {
         isPlaying = !isPlaying;
+        executor.shutdownNow();
         playPauseButton.setText(isPlaying ? "\u23F8 Pause" : "\u25B6 Play");
+        if (isPlaying) {
+            executor = Executors.newSingleThreadScheduledExecutor();
+            executor.scheduleAtFixedRate(() -> SoundGenerator.playSineWaveFromImage(SwingFXUtils.fromFXImage(imageView.getImage(), null), minFreq, maxFreq), 0, 1, TimeUnit.SECONDS);
+        } else {
+            stopPlayback();
+        }
     }
 
     public void stopPlayback() {
