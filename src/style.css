@@ -1,0 +1,123 @@
+/* Global styles */
+.root {
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-background-color: #f4f4f9;
+    -fx-padding: 10;
+}
+
+/* Control box */
+.control-box {
+    -fx-spacing: 15;
+    -fx-padding: 15;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 3);
+}
+
+/* Buttons */
+.control-button {
+    -fx-background-color: linear-gradient(to bottom, #4caf50, #388e3c);
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+
+.control-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #66bb6a, #43a047);
+    -fx-cursor: hand;
+}
+
+.control-button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #388e3c, #2e7d32);
+}
+
+/* Sliders */
+.frequency-slider {
+    -fx-pref-width: 400;
+    -fx-control-inner-background: #e0e0e0;
+}/* Global styles */
+.root {
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-background-color: #f9fafb;
+}
+
+/* Control box */
+.control-box {
+    -fx-spacing: 20;
+    -fx-padding: 20;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #dcdcdc;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-alignment: center; /* Centre les contrôles dans le VBox */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 3);
+}
+
+/* Buttons */
+.control-button {
+    -fx-background-color: linear-gradient(to bottom, #3b82f6, #2563eb);
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+
+.control-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #60a5fa, #3b82f6);
+    -fx-cursor: hand;
+}
+
+.control-button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #2563eb, #1d4ed8);
+}
+
+/* Sliders */
+.frequency-slider {
+    -fx-pref-width: 400;
+    -fx-control-inner-background: #e0e0e0;
+}
+
+.frequency-slider .track {
+    -fx-background-color: #d6d6d6;
+}
+
+.frequency-slider .thumb {
+    -fx-background-color: #3b82f6;
+    -fx-border-color: #2563eb;
+    -fx-border-radius: 50%;
+    -fx-border-width: 2;
+}
+
+/* Labels */
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #4b5563;
+    -fx-alignment: center;
+}
+
+
+.frequency-slider .track {
+    -fx-background-color: #d6d6d6;
+}
+
+.frequency-slider .thumb {
+    -fx-background-color: #4caf50;
+    -fx-border-color: #388e3c;
+    -fx-border-radius: 50%;
+    -fx-border-width: 2;
+}
+
+/* Labels */
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #555;
+}

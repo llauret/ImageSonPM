@@ -5,10 +5,8 @@ public class SoundGenerator {
 
     public static void playSineWaveFromImage(BufferedImage image, double minFreq, double maxFreq) {
         try {
-            // Réduire la résolution de l'image et convertir en niveaux de gris
             BufferedImage grayscaleImage = resizeAndGrayscale(image, 64, 64);
 
-            // Générer un son à partir de l'image
             generateSoundFromImage(grayscaleImage, minFreq, maxFreq);
         } catch (Exception e) {
             e.printStackTrace();
@@ -25,7 +23,6 @@ public class SoundGenerator {
         int width = image.getWidth();
         int height = image.getHeight();
 
-        // Fréquences associées aux pixels (logarithmique entre 200 Hz et 4000 Hz)
         double[] frequencies = new double[height];
         for (int i = 0; i < height; i++) {
             frequencies[i] = minFreq * Math.pow(maxFreq / minFreq, (double) i / (height - 1));
@@ -33,22 +30,18 @@ public class SoundGenerator {
 
         byte[] soundBuffer = new byte[(int) (44100 * 1000 / 1000)];
 
-        // Générer le son colonne par colonne
         for (int x = 0; x < width; x++) {
             double[] amplitudes = new double[height];
             for (int y = 0; y < height; y++) {
-                int grayLevel = (image.getRGB(x, y) & 0xFF) / 16; // Niveaux de gris réduits à 4 bits
-                amplitudes[y] = grayLevel / 15.0; // Amplitude normalisée
+                int grayLevel = (image.getRGB(x, y) & 0xFF) / 16;
+                amplitudes[y] = grayLevel / 15.0;
             }
 
-            // Créer un mélange sonore pour la colonne
             generateColumnSound(soundBuffer, frequencies, amplitudes, x, width);
         }
 
-        // Ajouter un clic sonore à la fin
         addClickSound(soundBuffer);
 
-        // Lecture du son
         playSound(soundBuffer);
     }
 
@@ -64,7 +57,6 @@ public class SoundGenerator {
                 value += amplitudes[i] * Math.sin(2 * Math.PI * frequencies[i] * time);
             }
 
-            // Normalisation et conversion en byte
             buffer[t] += (byte) (value * 127 / frequencies.length);
         }
     }
